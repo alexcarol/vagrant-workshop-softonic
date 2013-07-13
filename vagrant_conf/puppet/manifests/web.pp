@@ -42,4 +42,15 @@ class web {
       require => Package["nginx"],
       source => "/vagrant/vagrant_conf/puppet/conf/etc/nginx/fastcgi_params"
   }
+
+  file {
+    "/etc/nginx/sites-available/default":
+      notify => Service["nginx"],
+      mode => 664,
+      owner => root,
+      group => root,
+      require => Package["nginx"],
+      source => "/vagrant/vagrant_conf/puppet/conf/etc/nginx/sites/workshop.vhost"
+
+  }
 }
