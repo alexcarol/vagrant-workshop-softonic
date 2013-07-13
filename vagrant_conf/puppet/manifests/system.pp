@@ -7,6 +7,7 @@ class system-update {
     source => "/vagrant/vagrant_conf/puppet/conf/apt/10gen.list"
   }
 
+  #we could add require => Package["mongodb"], but it's not needed, as mongo never overwrites your mongodb.conf
   file {
     "/etc/mongodb.conf":
     owner => root,
