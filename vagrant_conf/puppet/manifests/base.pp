@@ -7,5 +7,8 @@ group { 'puppet':
 }
 
 import "system.pp"
+import "web.pp"
 
 include system-update
+
+class {"web": }

@@ -1,8 +1,5 @@
 class web {
-  notify {
-    "class_web":
-    message => "class web"
-  }
+  notify {"class_web": message => "class web"}
 
   $webPackages = ["nginx"]
   package {
@@ -30,7 +27,7 @@ class web {
       owner => root,
       group => root,
       require => Package["nginx"],
-      source => "/vagrant/vagrant_conf/puppet/etc/nginx/nginx.conf"
+      source => "/vagrant/vagrant_conf/puppet/conf/etc/nginx/nginx.conf"
   }
 
   file {
