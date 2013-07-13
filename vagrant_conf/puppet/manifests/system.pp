@@ -28,7 +28,7 @@ class system-update {
     command => 'apt-get update'
   }
 
-  $sysPackages = ["build-essential", "mongodb-10gen"]
+  $sysPackages = ["build-essential", "mongodb10-gen"]
   package {
     $sysPackages:
     ensure => installed,
