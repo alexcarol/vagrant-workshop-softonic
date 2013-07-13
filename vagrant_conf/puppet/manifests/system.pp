@@ -1,6 +1,6 @@
 class system-update {
   file {
-    "/etc/apt/sources.list.10gen.list":
+    "/etc/apt/sources.list.d/10gen.list":
     owner => root,
     group => root,
     mode => 664,
@@ -28,7 +28,7 @@ class system-update {
     command => 'apt-get update'
   }
 
-  $sysPackages = ["build-essential", "mongodb10-gen"]
+  $sysPackages = ["build-essential","mongodb-10gen"]
   package {
     $sysPackages:
     ensure => installed,
