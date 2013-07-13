@@ -32,4 +32,14 @@ class web {
       require => Package["nginx"],
       source => "/vagrant/vagrant_conf/puppet/etc/nginx/nginx.conf"
   }
+
+  file {
+    "/etc/nginx/fastcgi_params":
+      notify => Service["nginx"],
+      mode => 644,
+      owner => root,
+      group => root,
+      require => Package["nginx"],
+      source => "/vagrant/vagrant_conf/puppet/conf/etc/nginx/fastcgi_params"
+  }
 }
